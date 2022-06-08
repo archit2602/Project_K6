@@ -41,4 +41,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: results.zip
+          path: ./results.json
+          
+      - name: slack-send
+        uses: slackapi/slack-github-action@v1.19.0
+        with:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
