@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: summary.json
+          path: ./summary.json
           
       - name: Report Status
         if: always()
