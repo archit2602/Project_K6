@@ -43,9 +43,3 @@ jobs:
 #         with:
 #           path: ./results.json
           
-      - name: Send custom JSON data to Slack workflow
-      - uses: actions/checkout@v2
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
