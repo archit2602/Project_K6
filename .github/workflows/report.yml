@@ -36,12 +36,12 @@ jobs:
           name: k6-report
           path: results.json
           
-      - name: PR Comment from File
-        uses: machine-learning-apps/pr-comment@1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: ./results.json
+#       - name: PR Comment from File
+#         uses: machine-learning-apps/pr-comment@1.0.0
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           path: ./results.json
           
       - name: slack-send
         uses: slackapi/slack-github-action@v1.19.0
