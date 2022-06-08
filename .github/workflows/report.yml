@@ -42,4 +42,15 @@ jobs:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #         with:
 #           path: ./results.json
-          
+
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+      with: 
+        status: ${{ job.status }}
