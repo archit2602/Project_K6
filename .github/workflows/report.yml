@@ -6,9 +6,9 @@ name: Raw Data File
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "master" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
           path: results.json
           
       - name: PR Comment from File
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        uses: machine-learning-apps/pr-comment@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
