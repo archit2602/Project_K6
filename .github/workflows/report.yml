@@ -36,9 +36,16 @@ jobs:
           name: k6-report
           path: results.json
           
-      - name: PR Comment from File
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
+#       - name: PR Comment from File
+#         uses: machine-learning-apps/pr-comment@1.0.0
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           path: ./results.json
+          
+      - name: Send custom JSON data to Slack workflow
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: results.json
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
