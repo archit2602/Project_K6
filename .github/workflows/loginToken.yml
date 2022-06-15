@@ -42,14 +42,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: k6-summary-report
-          path: filename
+          path: result
           
       - name: PR Comment from File
         uses: machine-learning-apps/pr-comment@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: filename
+          path: result
           
       - name: Report Status
         if: always()
